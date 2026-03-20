@@ -19,6 +19,20 @@ Emacs support for [ROS](https://www.ros.org/) (Robot Operating System).
 | Section separators    | `---`                            |
 | Comments              | `# ...`                          |
 
+#### Examples
+
+`.msg`
+
+![msg](images/msg.png)
+
+`.srv`
+
+![srv](images/srv.png)
+
+`.action`
+
+![action](images/action.png)
+
 `ros-idl-mode` is a major mode for ROS 2 IDL interface files
 (`.idl`) with font-lock support for:
 
@@ -32,6 +46,10 @@ Emacs support for [ROS](https://www.ros.org/) (Robot Operating System).
 | Qualified types       | `geometry_msgs::msg::Point`      |
 | Constants             | `TRUE`, `FALSE`                  |
 | Comments              | `//`, `/* ... */`                |
+
+#### Example
+
+![idl](images/idl.png)
 
 ### File associations
 
