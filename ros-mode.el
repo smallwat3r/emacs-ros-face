@@ -26,7 +26,7 @@
 
 ;;; Commentary:
 
-;; Emacs support for ROS (Robot Operating System) files.
+;; Emacs support for ROS (Robot Operating System).
 ;;
 ;; Provides `ros-msg-mode', a major mode with syntax highlighting
 ;; for ROS interface definition files:
