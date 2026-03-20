@@ -109,9 +109,8 @@ Clone this repository and add it to your `load-path`:
 ### Example keybindings
 
 ```elisp
-(with-eval-after-load 'ros-mode
-  (keymap-global-set "C-c r w" #'ros-compile)
-  (keymap-global-set "C-c r p" #'ros-compile-package))
+(keymap-global-set "C-c r w" #'ros-compile)
+(keymap-global-set "C-c r p" #'ros-compile-package)
 ```
 
 ## License
