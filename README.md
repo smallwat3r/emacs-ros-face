@@ -121,17 +121,6 @@ Requires Emacs 27.1 or later.
          ("\\.idl\\'" . ros-idl-mode)))
 ```
 
-### use-package + straight.el
-
-```elisp
-(use-package ros-mode
-  :straight (:host github :repo "smallwat3r/emacs-ros-mode")
-  :mode (("\\.msg\\'" . ros-msg-mode)
-         ("\\.srv\\'" . ros-msg-mode)
-         ("\\.action\\'" . ros-msg-mode)
-         ("\\.idl\\'" . ros-idl-mode)))
-```
-
 ### Manual
 
 Clone this repository and add it to your `load-path`:
@@ -141,11 +130,30 @@ Clone this repository and add it to your `load-path`:
 (require 'ros-mode)
 ```
 
-### Example keybindings
+### Example configuration
 
 ```elisp
-(keymap-global-set "C-c r w" #'ros-compile)
-(keymap-global-set "C-c r p" #'ros-compile-package)
+(use-package ros-mode
+  :ensure (:host github :repo "smallwat3r/emacs-ros-mode")
+  :mode (("\\.msg\\'" . ros-msg-mode)
+         ("\\.srv\\'" . ros-msg-mode)
+         ("\\.action\\'" . ros-msg-mode)
+         ("\\.idl\\'" . ros-idl-mode))
+  :custom
+  (ros-build-tool 'colcon)
+  (ros-build-args "--cmake-args -DCMAKE_BUILD_TYPE=Release")
+  (ros-workspace-root "~/ros2_ws")
+  :bind
+  (("C-c r w" . ros-compile)
+   ("C-c r p" . ros-compile-package)))
+```
+
+Per-workspace settings via `.dir-locals.el`:
+
+```elisp
+((nil . ((ros-build-tool . colcon)
+         (ros-build-args . "--symlink-install --parallel-workers 4")
+         (ros-workspace-root . "/home/user/ros2_ws"))))
 ```
 
 ## License
