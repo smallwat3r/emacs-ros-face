@@ -79,7 +79,7 @@ When nil, `ros--find-workspace-root' uses heuristics."
      (lambda (v) (or (null v) (stringp v))))
 
 (defun ros--ros-workspace-p (dir)
-  "Return non-nil if DIR looks like a ROS workspace."
+  "Return non-nil if DIR look like a ROS workspace."
   (or (file-exists-p
        (expand-file-name ".catkin_workspace" dir))
       (file-directory-p
