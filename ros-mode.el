@@ -192,14 +192,14 @@ When PACKAGE is non-nil, build only that package."
        (4 font-lock-string-face))
       ;; Built-in type with optional array brackets
       (,(concat "^\\s-*" type-re
-                "\\(\\[\\<=?[0-9]*\\]\\)?")
+                "\\(\\[<?=?[0-9]*\\]\\)?")
        (1 font-lock-type-face)
        (2 font-lock-type-face nil t))
       ;; Custom types: pkg/Type or just PascalType
       (,(concat "^\\s-*"
                 "\\([a-zA-Z_][a-zA-Z0-9_]*/\\)?"
                 "\\([A-Z][A-Za-z0-9_]*\\)"
-                "\\(\\[\\<=?[0-9]*\\]\\)?"
+                "\\(\\[<?=?[0-9]*\\]\\)?"
                 "\\s-+[a-zA-Z_]")
        (1 font-lock-type-face nil t)
        (2 font-lock-type-face)
